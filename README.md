@@ -16,7 +16,7 @@ The data and workflow replicate the analysis described in the accompanying manus
 
 Each file contains contribution records and member identifiers for one election cycle.  
 
-- `dfdf07_08.csv` — General election winners of 2008 (111th Congress) and contributions in 2007–2008  
+- `df07_08.csv` — General election winners of 2008 (111th Congress) and contributions in 2007–2008  
 - `df09_10.csv` — General election winners of 2010 (112th Congress) and contributions in 2009–2010  
 - `df11_12.csv` — General election winners of 2012 (113th Congress) and contributions in 2011–2012  
 - `df13_14.csv` — General election winners of 2014 (114th Congress) and contributions in 2013–2014  
