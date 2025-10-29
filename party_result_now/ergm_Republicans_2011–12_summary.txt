@@ -1,0 +1,480 @@
+=== ERGM Summary for Republicans 2011–12 ===
+
+Call:
+ergm(formula = net_party ~ edges + nodematch("CAND_OFFICE_ST") + 
+    nodeicov("chairs_now") + nodeocov("chairs_now") + nodeicov("cumulative_occurrence") + 
+    nodeocov("cumulative_occurrence") + nodeicov("X24E") + nodeocov("X24E") + 
+    nodeicov("X24A") + nodeocov("X24A") + mutual + gwesp(0.5, 
+    fixed = TRUE) + gwidegree(0.5, fixed = TRUE), control = control.ergm(init = coef(mple_model), 
+    MCMC.burnin = 10000, MCMC.interval = 5000, MCMC.samplesize = 3000, 
+    MCMLE.maxit = 30, MCMLE.termination = "Hummel", parallel = 4, 
+    parallel.type = "PSOCK"))
+
+Monte Carlo Maximum Likelihood Results:
+
+                                 Estimate Std. Error MCMC % z value Pr(>|z|)
+edges                          -4.0249989  0.1095777      0 -36.732   <1e-04
+nodematch.CAND_OFFICE_ST        1.0715083  0.0842139      0  12.724   <1e-04
+nodeicov.chairs_now             0.0248195  0.0971707      0   0.255   0.7984
+nodeocov.chairs_now            -0.0065193  0.0836113      0  -0.078   0.9379
+nodeicov.cumulative_occurrence -0.3996056  0.0335854      0 -11.898   <1e-04
+nodeocov.cumulative_occurrence  0.3327340  0.0426937      0   7.794   <1e-04
+nodeicov.X24E                   0.1596876  0.0386795      0   4.128   <1e-04
+nodeocov.X24E                  -0.2236938  0.0882738      0  -2.534   0.0113
+nodeicov.X24A                   0.3556127  0.0191201      0  18.599   <1e-04
+nodeocov.X24A                  -0.5780343  0.0672395      0  -8.597   <1e-04
+mutual                         -0.0002563  0.3207045      0  -0.001   0.9994
+gwesp.OTP.fixed.0.5             0.7333800  0.0348458      0  21.046   <1e-04
+gwideg.fixed.0.5               -2.9940560  0.1727590      0 -17.331   <1e-04
+                                  
+edges                          ***
+nodematch.CAND_OFFICE_ST       ***
+nodeicov.chairs_now               
+nodeocov.chairs_now               
+nodeicov.cumulative_occurrence ***
+nodeocov.cumulative_occurrence ***
+nodeicov.X24E                  ***
+nodeocov.X24E                  *  
+nodeicov.X24A                  ***
+nodeocov.X24A                  ***
+mutual                            
+gwesp.OTP.fixed.0.5            ***
+gwideg.fixed.0.5               ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+     Null Deviance: 75584  on 54522  degrees of freedom
+ Residual Deviance:  9113  on 54509  degrees of freedom
+ 
+AIC: 9139  BIC: 9254  (Smaller is better. MC Std. Err. = 0.6744)
+
+--- MCMC Diagnostics ---
+Sample statistics summary:
+
+Iterations = 4582656:18720000
+Thinning interval = 9984 
+Number of chains = 4 
+Sample size per chain = 1417 
+
+1. Empirical mean and standard deviation for each variable,
+   plus standard error of the mean:
+
+                                  Mean      SD Naive SE Time-series SE
+edges                          -29.245 148.885  1.97759        12.0135
+nodematch.CAND_OFFICE_ST        -3.659  27.294  0.36253         2.4302
+nodeicov.chairs_now             -1.560  13.888  0.18447         0.6062
+nodeocov.chairs_now             -2.778  21.654  0.28762         1.4065
+nodeicov.cumulative_occurrence -53.719 287.364  3.81696        23.0593
+nodeocov.cumulative_occurrence -71.393 368.704  4.89736        30.7174
+nodeicov.X24E                  -12.093  64.130  0.85181         3.9242
+nodeocov.X24E                   -3.677  19.116  0.25391         0.9686
+nodeicov.X24A                  -18.678 127.875  1.69852         7.5208
+nodeocov.X24A                   -4.330  25.413  0.33756         1.2540
+mutual                          -1.470   6.567  0.08723         0.5034
+gwesp.OTP.fixed.0.5            -37.596 163.514  2.17190        14.0809
+gwideg.fixed.0.5                -1.911  14.356  0.19068         0.9332
+
+2. Quantiles for each variable:
+
+                                  2.5%     25%      50%     75% 97.5%
+edges                          -280.00 -139.00  -43.500  65.000 295.0
+nodematch.CAND_OFFICE_ST        -46.00  -23.00   -8.000  11.000  62.0
+nodeicov.chairs_now             -25.00  -12.00   -3.000   7.000  29.0
+nodeocov.chairs_now             -40.00  -18.00   -4.000  10.000  44.0
+nodeicov.cumulative_occurrence -529.00 -261.00  -86.000 119.000 600.6
+nodeocov.cumulative_occurrence -687.00 -342.00 -107.000 156.000 745.6
+nodeicov.X24E                  -126.00  -58.00  -16.000  31.000 120.0
+nodeocov.X24E                   -38.00  -17.00   -5.000   9.000  36.0
+nodeicov.X24A                  -260.00 -110.00  -21.000  70.000 232.0
+nodeocov.X24A                   -48.00  -23.00   -6.000  12.000  48.0
+mutual                          -11.00   -6.00   -3.000   2.000  15.0
+gwesp.OTP.fixed.0.5            -284.97 -163.57  -61.484  60.962 342.4
+gwideg.fixed.0.5                -29.12  -11.98   -2.353   7.534  27.5
+
+
+Sample statistics cross-correlations:
+                                   edges nodematch.CAND_OFFICE_ST
+edges                          1.0000000                0.8510744
+nodematch.CAND_OFFICE_ST       0.8510744                1.0000000
+nodeicov.chairs_now            0.5502622                0.5249810
+nodeocov.chairs_now            0.7993526                0.6992584
+nodeicov.cumulative_occurrence 0.9895916                0.8584455
+nodeocov.cumulative_occurrence 0.9970634                0.8540059
+nodeicov.X24E                  0.8480579                0.6466684
+nodeocov.X24E                  0.6844446                0.5091434
+nodeicov.X24A                  0.7911736                0.5870189
+nodeocov.X24A                  0.6138628                0.4214574
+mutual                         0.8097970                0.8000955
+gwesp.OTP.fixed.0.5            0.9680353                0.8533334
+gwideg.fixed.0.5               0.8378065                0.7035856
+                               nodeicov.chairs_now nodeocov.chairs_now
+edges                                    0.5502622           0.7993526
+nodematch.CAND_OFFICE_ST                 0.5249810           0.6992584
+nodeicov.chairs_now                      1.0000000           0.5907276
+nodeocov.chairs_now                      0.5907276           1.0000000
+nodeicov.cumulative_occurrence           0.5849444           0.7986502
+nodeocov.cumulative_occurrence           0.5600329           0.8089055
+nodeicov.X24E                            0.4190253           0.6688304
+nodeocov.X24E                            0.3407794           0.5478081
+nodeicov.X24A                            0.3548536           0.6167892
+nodeocov.X24A                            0.2491367           0.4617806
+mutual                                   0.4681080           0.6438099
+gwesp.OTP.fixed.0.5                      0.5188771           0.7682740
+gwideg.fixed.0.5                         0.5380983           0.6844867
+                               nodeicov.cumulative_occurrence
+edges                                               0.9895916
+nodematch.CAND_OFFICE_ST                            0.8584455
+nodeicov.chairs_now                                 0.5849444
+nodeocov.chairs_now                                 0.7986502
+nodeicov.cumulative_occurrence                      1.0000000
+nodeocov.cumulative_occurrence                      0.9913444
+nodeicov.X24E                                       0.8158691
+nodeocov.X24E                                       0.6547469
+nodeicov.X24A                                       0.7775890
+nodeocov.X24A                                       0.5885661
+mutual                                              0.8034612
+gwesp.OTP.fixed.0.5                                 0.9502422
+gwideg.fixed.0.5                                    0.8673445
+                               nodeocov.cumulative_occurrence nodeicov.X24E
+edges                                               0.9970634     0.8480579
+nodematch.CAND_OFFICE_ST                            0.8540059     0.6466684
+nodeicov.chairs_now                                 0.5600329     0.4190253
+nodeocov.chairs_now                                 0.8089055     0.6688304
+nodeicov.cumulative_occurrence                      0.9913444     0.8158691
+nodeocov.cumulative_occurrence                      1.0000000     0.8393766
+nodeicov.X24E                                       0.8393766     1.0000000
+nodeocov.X24E                                       0.6648597     0.7582149
+nodeicov.X24A                                       0.7838623     0.8267594
+nodeocov.X24A                                       0.6028863     0.6615496
+mutual                                              0.8033323     0.6624952
+gwesp.OTP.fixed.0.5                                 0.9611232     0.8496926
+gwideg.fixed.0.5                                    0.8457260     0.6154533
+                               nodeocov.X24E nodeicov.X24A nodeocov.X24A
+edges                              0.6844446     0.7911736     0.6138628
+nodematch.CAND_OFFICE_ST           0.5091434     0.5870189     0.4214574
+nodeicov.chairs_now                0.3407794     0.3548536     0.2491367
+nodeocov.chairs_now                0.5478081     0.6167892     0.4617806
+nodeicov.cumulative_occurrence     0.6547469     0.7775890     0.5885661
+nodeocov.cumulative_occurrence     0.6648597     0.7838623     0.6028863
+nodeicov.X24E                      0.7582149     0.8267594     0.6615496
+nodeocov.X24E                      1.0000000     0.6646893     0.6428014
+nodeicov.X24A                      0.6646893     1.0000000     0.7753489
+nodeocov.X24A                      0.6428014     0.7753489     1.0000000
+mutual                             0.5546978     0.6108743     0.5156679
+gwesp.OTP.fixed.0.5                0.6876169     0.8134955     0.6489194
+gwideg.fixed.0.5                   0.5077026     0.5642163     0.4357362
+                                  mutual gwesp.OTP.fixed.0.5 gwideg.fixed.0.5
+edges                          0.8097970           0.9680353        0.8378065
+nodematch.CAND_OFFICE_ST       0.8000955           0.8533334        0.7035856
+nodeicov.chairs_now            0.4681080           0.5188771        0.5380983
+nodeocov.chairs_now            0.6438099           0.7682740        0.6844867
+nodeicov.cumulative_occurrence 0.8034612           0.9502422        0.8673445
+nodeocov.cumulative_occurrence 0.8033323           0.9611232        0.8457260
+nodeicov.X24E                  0.6624952           0.8496926        0.6154533
+nodeocov.X24E                  0.5546978           0.6876169        0.5077026
+nodeicov.X24A                  0.6108743           0.8134955        0.5642163
+nodeocov.X24A                  0.5156679           0.6489194        0.4357362
+mutual                         1.0000000           0.8548056        0.6285633
+gwesp.OTP.fixed.0.5            0.8548056           1.0000000        0.7409219
+gwideg.fixed.0.5               0.6285633           0.7409219        1.0000000
+
+Sample statistics auto-correlation:
+Chain 1 
+              edges nodematch.CAND_OFFICE_ST nodeicov.chairs_now
+Lag 0     1.0000000                1.0000000           1.0000000
+Lag 9984  0.9192680                0.8717708           0.6415884
+Lag 19968 0.8567656                0.7938174           0.4570494
+Lag 29952 0.7994288                0.7376581           0.3830245
+Lag 39936 0.7485449                0.6935272           0.3279890
+Lag 49920 0.7045490                0.6547828           0.2772820
+          nodeocov.chairs_now nodeicov.cumulative_occurrence
+Lag 0               1.0000000                      1.0000000
+Lag 9984            0.7034828                      0.9073046
+Lag 19968           0.6117703                      0.8403790
+Lag 29952           0.5456393                      0.7812423
+Lag 39936           0.4889358                      0.7305497
+Lag 49920           0.4683590                      0.6857928
+          nodeocov.cumulative_occurrence nodeicov.X24E nodeocov.X24E
+Lag 0                          1.0000000     1.0000000     1.0000000
+Lag 9984                       0.9138365     0.8392563     0.6746121
+Lag 19968                      0.8507649     0.7541350     0.5597033
+Lag 29952                      0.7936187     0.6883115     0.4960392
+Lag 39936                      0.7419306     0.6247443     0.4395243
+Lag 49920                      0.6993920     0.5743571     0.4045267
+          nodeicov.X24A nodeocov.X24A    mutual gwesp.OTP.fixed.0.5
+Lag 0         1.0000000     1.0000000 1.0000000           1.0000000
+Lag 9984      0.8662473     0.6954244 0.7360668           0.9260231
+Lag 19968     0.7762296     0.6018470 0.6577083           0.8708023
+Lag 29952     0.7093638     0.5570755 0.6002177           0.8200646
+Lag 39936     0.6494799     0.5150523 0.5794602           0.7730078
+Lag 49920     0.6059829     0.4767380 0.5495485           0.7279249
+          gwideg.fixed.0.5
+Lag 0            1.0000000
+Lag 9984         0.7586790
+Lag 19968        0.6392050
+Lag 29952        0.5568493
+Lag 39936        0.4859000
+Lag 49920        0.4327037
+Chain 2 
+              edges nodematch.CAND_OFFICE_ST nodeicov.chairs_now
+Lag 0     1.0000000                1.0000000           1.0000000
+Lag 9984  0.9320204                0.9094286           0.7013133
+Lag 19968 0.8773605                0.8519578           0.5653535
+Lag 29952 0.8287896                0.8210181           0.4694162
+Lag 39936 0.7948611                0.7892245           0.3991067
+Lag 49920 0.7675513                0.7646948           0.3431946
+          nodeocov.chairs_now nodeicov.cumulative_occurrence
+Lag 0               1.0000000                      1.0000000
+Lag 9984            0.7743299                      0.9233596
+Lag 19968           0.6708872                      0.8646503
+Lag 29952           0.6157073                      0.8147826
+Lag 39936           0.5658091                      0.7787299
+Lag 49920           0.5390610                      0.7529386
+          nodeocov.cumulative_occurrence nodeicov.X24E nodeocov.X24E
+Lag 0                          1.0000000     1.0000000     1.0000000
+Lag 9984                       0.9295115     0.8455385     0.6614519
+Lag 19968                      0.8746609     0.7525844     0.5481627
+Lag 29952                      0.8259649     0.6908696     0.4910505
+Lag 39936                      0.7917195     0.6467221     0.4587315
+Lag 49920                      0.7636012     0.6259104     0.4599383
+          nodeicov.X24A nodeocov.X24A    mutual gwesp.OTP.fixed.0.5
+Lag 0         1.0000000     1.0000000 1.0000000           1.0000000
+Lag 9984      0.8561115     0.6750838 0.7466839           0.9335238
+Lag 19968     0.7556343     0.5832886 0.6931017           0.8843959
+Lag 29952     0.6731421     0.4959409 0.6624356           0.8398906
+Lag 39936     0.6227232     0.4343336 0.6312711           0.8085217
+Lag 49920     0.5866733     0.4185273 0.6073359           0.7807785
+          gwideg.fixed.0.5
+Lag 0            1.0000000
+Lag 9984         0.7683629
+Lag 19968        0.6421493
+Lag 29952        0.5631693
+Lag 39936        0.5113395
+Lag 49920        0.4915157
+Chain 3 
+              edges nodematch.CAND_OFFICE_ST nodeicov.chairs_now
+Lag 0     1.0000000                1.0000000           1.0000000
+Lag 9984  0.9227367                0.9004431           0.6664503
+Lag 19968 0.8597460                0.8380567           0.5248605
+Lag 29952 0.8008406                0.7847101           0.4123297
+Lag 39936 0.7465802                0.7477316           0.3446985
+Lag 49920 0.6968749                0.7146230           0.3121247
+          nodeocov.chairs_now nodeicov.cumulative_occurrence
+Lag 0               1.0000000                      1.0000000
+Lag 9984            0.7267126                      0.9159173
+Lag 19968           0.6103577                      0.8481221
+Lag 29952           0.5409621                      0.7880362
+Lag 39936           0.4936325                      0.7365475
+Lag 49920           0.4696191                      0.6919528
+          nodeocov.cumulative_occurrence nodeicov.X24E nodeocov.X24E
+Lag 0                          1.0000000     1.0000000     1.0000000
+Lag 9984                       0.9191431     0.8455386     0.6585782
+Lag 19968                      0.8536737     0.7488282     0.5399638
+Lag 29952                      0.7926904     0.6768580     0.4681434
+Lag 39936                      0.7391669     0.5960124     0.4241380
+Lag 49920                      0.6921279     0.5287530     0.3775051
+          nodeicov.X24A nodeocov.X24A    mutual gwesp.OTP.fixed.0.5
+Lag 0         1.0000000     1.0000000 1.0000000           1.0000000
+Lag 9984      0.8657377     0.7062563 0.7362223           0.9297287
+Lag 19968     0.7650684     0.6174213 0.6755382           0.8725655
+Lag 29952     0.6820701     0.5671105 0.6540409           0.8173668
+Lag 39936     0.6088769     0.4893755 0.6084816           0.7644970
+Lag 49920     0.5498633     0.4329288 0.5758835           0.7143347
+          gwideg.fixed.0.5
+Lag 0            1.0000000
+Lag 9984         0.7698297
+Lag 19968        0.6519630
+Lag 29952        0.5658528
+Lag 39936        0.5158526
+Lag 49920        0.4852688
+Chain 4 
+              edges nodematch.CAND_OFFICE_ST nodeicov.chairs_now
+Lag 0     1.0000000                1.0000000           1.0000000
+Lag 9984  0.9356818                0.9198174           0.7322554
+Lag 19968 0.8840669                0.8671228           0.5953437
+Lag 29952 0.8430531                0.8331342           0.5227136
+Lag 39936 0.8079514                0.8098195           0.4648369
+Lag 49920 0.7709414                0.7807910           0.4296054
+          nodeocov.chairs_now nodeicov.cumulative_occurrence
+Lag 0               1.0000000                      1.0000000
+Lag 9984            0.7649265                      0.9276698
+Lag 19968           0.6605256                      0.8724824
+Lag 29952           0.6095600                      0.8307832
+Lag 39936           0.5690053                      0.7971716
+Lag 49920           0.5441485                      0.7624850
+          nodeocov.cumulative_occurrence nodeicov.X24E nodeocov.X24E
+Lag 0                          1.0000000     1.0000000     1.0000000
+Lag 9984                       0.9329840     0.8338783     0.6492543
+Lag 19968                      0.8813600     0.7356728     0.5400288
+Lag 29952                      0.8403325     0.6619319     0.4528563
+Lag 39936                      0.8055108     0.6018450     0.4015347
+Lag 49920                      0.7692983     0.5606135     0.3587988
+          nodeicov.X24A nodeocov.X24A    mutual gwesp.OTP.fixed.0.5
+Lag 0         1.0000000     1.0000000 1.0000000           1.0000000
+Lag 9984      0.8421045     0.6660451 0.7832533           0.9448695
+Lag 19968     0.7280971     0.5530670 0.7370939           0.9031005
+Lag 29952     0.6434265     0.4840245 0.7054683           0.8663240
+Lag 39936     0.5706396     0.4085833 0.6903468           0.8372084
+Lag 49920     0.5094216     0.3597622 0.6762080           0.8046716
+          gwideg.fixed.0.5
+Lag 0            1.0000000
+Lag 9984         0.7905217
+Lag 19968        0.6843945
+Lag 29952        0.6200636
+Lag 39936        0.5686841
+Lag 49920        0.5310494
+
+Sample statistics burn-in diagnostic (Geweke):
+Chain 1 
+
+Fraction in 1st window = 0.1
+Fraction in 2nd window = 0.5 
+
+                         edges       nodematch.CAND_OFFICE_ST 
+                    0.61228422                     0.40176596 
+           nodeicov.chairs_now            nodeocov.chairs_now 
+                    1.58095053                     1.18738160 
+nodeicov.cumulative_occurrence nodeocov.cumulative_occurrence 
+                    0.78217416                     0.67730626 
+                 nodeicov.X24E                  nodeocov.X24E 
+                    0.27270330                    -0.10290947 
+                 nodeicov.X24A                  nodeocov.X24A 
+                    0.55557665                     0.14579566 
+                        mutual            gwesp.OTP.fixed.0.5 
+                    0.00779345                     0.15381806 
+              gwideg.fixed.0.5 
+                    1.79156749 
+
+Individual P-values (lower = worse):
+                         edges       nodematch.CAND_OFFICE_ST 
+                    0.54034973                     0.68785628 
+           nodeicov.chairs_now            nodeocov.chairs_now 
+                    0.11388935                     0.23507714 
+nodeicov.cumulative_occurrence nodeocov.cumulative_occurrence 
+                    0.43411223                     0.49821166 
+                 nodeicov.X24E                  nodeocov.X24E 
+                    0.78508130                     0.91803482 
+                 nodeicov.X24A                  nodeocov.X24A 
+                    0.57850030                     0.88408270 
+                        mutual            gwesp.OTP.fixed.0.5 
+                    0.99378179                     0.87775320 
+              gwideg.fixed.0.5 
+                    0.07320228 
+Joint P-value (lower = worse):  0.001592902 
+Chain 2 
+
+Fraction in 1st window = 0.1
+Fraction in 2nd window = 0.5 
+
+                         edges       nodematch.CAND_OFFICE_ST 
+                      2.038447                       2.206350 
+           nodeicov.chairs_now            nodeocov.chairs_now 
+                      1.615669                       2.141246 
+nodeicov.cumulative_occurrence nodeocov.cumulative_occurrence 
+                      1.742677                       2.031500 
+                 nodeicov.X24E                  nodeocov.X24E 
+                      1.817767                       1.672600 
+                 nodeicov.X24A                  nodeocov.X24A 
+                      2.484779                       1.671644 
+                        mutual            gwesp.OTP.fixed.0.5 
+                      1.784350                       2.027470 
+              gwideg.fixed.0.5 
+                      2.000608 
+
+Individual P-values (lower = worse):
+                         edges       nodematch.CAND_OFFICE_ST 
+                    0.04150530                     0.02735948 
+           nodeicov.chairs_now            nodeocov.chairs_now 
+                    0.10616600                     0.03225418 
+nodeicov.cumulative_occurrence nodeocov.cumulative_occurrence 
+                    0.08139004                     0.04220427 
+                 nodeicov.X24E                  nodeocov.X24E 
+                    0.06909977                     0.09440611 
+                 nodeicov.X24A                  nodeocov.X24A 
+                    0.01296319                     0.09459459 
+                        mutual            gwesp.OTP.fixed.0.5 
+                    0.07436679                     0.04261432 
+              gwideg.fixed.0.5 
+                    0.04543466 
+Joint P-value (lower = worse):  0.4231472 
+Chain 3 
+
+Fraction in 1st window = 0.1
+Fraction in 2nd window = 0.5 
+
+                         edges       nodematch.CAND_OFFICE_ST 
+                    -0.7011891                     -1.0527237 
+           nodeicov.chairs_now            nodeocov.chairs_now 
+                    -0.9472355                     -0.9161816 
+nodeicov.cumulative_occurrence nodeocov.cumulative_occurrence 
+                    -1.0884746                     -0.7621383 
+                 nodeicov.X24E                  nodeocov.X24E 
+                    -0.2456766                     -0.3485718 
+                 nodeicov.X24A                  nodeocov.X24A 
+                    -0.7982905                      0.3443974 
+                        mutual            gwesp.OTP.fixed.0.5 
+                    -0.7476943                     -0.5897786 
+              gwideg.fixed.0.5 
+                    -1.3851593 
+
+Individual P-values (lower = worse):
+                         edges       nodematch.CAND_OFFICE_ST 
+                     0.4831850                      0.2924676 
+           nodeicov.chairs_now            nodeocov.chairs_now 
+                     0.3435188                      0.3595716 
+nodeicov.cumulative_occurrence nodeocov.cumulative_occurrence 
+                     0.2763856                      0.4459775 
+                 nodeicov.X24E                  nodeocov.X24E 
+                     0.8059326                      0.7274108 
+                 nodeicov.X24A                  nodeocov.X24A 
+                     0.4247019                      0.7305474 
+                        mutual            gwesp.OTP.fixed.0.5 
+                     0.4546446                      0.5553391 
+              gwideg.fixed.0.5 
+                     0.1660038 
+Joint P-value (lower = worse):  0.01536955 
+Chain 4 
+
+Fraction in 1st window = 0.1
+Fraction in 2nd window = 0.5 
+
+                         edges       nodematch.CAND_OFFICE_ST 
+                    -0.3467959                     -0.3004995 
+           nodeicov.chairs_now            nodeocov.chairs_now 
+                     0.6763337                     -0.3563833 
+nodeicov.cumulative_occurrence nodeocov.cumulative_occurrence 
+                    -0.3320613                     -0.3423683 
+                 nodeicov.X24E                  nodeocov.X24E 
+                    -0.7335130                     -0.3432272 
+                 nodeicov.X24A                  nodeocov.X24A 
+                    -1.0883232                     -1.1912609 
+                        mutual            gwesp.OTP.fixed.0.5 
+                    -0.5861634                     -0.5031275 
+              gwideg.fixed.0.5 
+                    -0.4965981 
+
+Individual P-values (lower = worse):
+                         edges       nodematch.CAND_OFFICE_ST 
+                     0.7287447                      0.7637962 
+           nodeicov.chairs_now            nodeocov.chairs_now 
+                     0.4988288                      0.7215535 
+nodeicov.cumulative_occurrence nodeocov.cumulative_occurrence 
+                     0.7398430                      0.7320737 
+                 nodeicov.X24E                  nodeocov.X24E 
+                     0.4632456                      0.7314275 
+                 nodeicov.X24A                  nodeocov.X24A 
+                     0.2764525                      0.2335512 
+                        mutual            gwesp.OTP.fixed.0.5 
+                     0.5577657                      0.6148746 
+              gwideg.fixed.0.5 
+                     0.6194725 
+Joint P-value (lower = worse):  0.4211037 
+
+Note: MCMC diagnostics shown here are from the last round of
+  simulation, prior to computation of final parameter estimates.
+  Because the final estimates are refinements of those used for this
+  simulation run, these diagnostics may understate model performance.
+  To directly assess the performance of the final model on in-model
+  statistics, please use the GOF command: gof(ergmFitObject,
+  GOF=~model).
+
